@@ -7,14 +7,14 @@ import { ThrottlerModule } from '@nestjs/throttler';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true
+      isGlobal: true,
     }),
     ThrottlerModule.forRoot([
       {
-        ttl: 1 * 100 * 600, // 1 minuto
-        limit: 100 // 100 reques por minuto
-      }
-    ])
+        ttl: 1 * 60 * 1000, // 1 minuto
+        limit: 100, // 100 reques por minuto
+      },
+    ]),
   ],
   controllers: [AppController],
   providers: [AppService],
