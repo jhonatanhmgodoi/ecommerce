@@ -3,5 +3,8 @@
 ### Central
 GET {{baseUrl}}
 
+### Documentatiom
+GET {{baseUrl}}/api
+
 ### Health
 GET {{baseUrl}}/health
