@@ -24,4 +24,8 @@ import { LoggingMiddleware } from './middleware/logging/logging.middleware';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) { // todas as requisições serão interceptadas
+    consumer.apply(LoggingMiddleware).forRoutes('*'); // então não há necessidade de implementar nas controllers
+  }
+}
