@@ -1,4 +1,7 @@
 @baseUrl = http://localhost:3005
 
-# Central
+### Central
 GET {{baseUrl}}
+
+### Health
+GET {{baseUrl}}/health
